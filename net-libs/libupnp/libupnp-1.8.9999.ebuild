@@ -15,7 +15,7 @@ SRC_URI=""
 LICENSE="BSD"
 SLOT="1.8"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug doc ipv6 static-libs samples"
+IUSE="debug doc ipv6 static-libs samples reuseaddr"
 
 DOCS="NEWS README.md ChangeLog"
 
@@ -40,6 +40,7 @@ src_configure() {
 		$(use_enable ipv6) \
 		$(use_enable samples) \
 		$(use_enable static-libs static) \
+		$(use_enable reuseaddr) \
 		$(use_with doc documentation "${EPREFIX}/usr/share/doc/${PF}")
 }
 
